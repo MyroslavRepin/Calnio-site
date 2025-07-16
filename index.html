@@ -1,95 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Schedola — Coming Soon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Шрифты: элегантный с засечками и современный -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        background-color: #fdfcfb;
-        color: #1e293b; /* slate-900 */
-        font-family: "Inter", sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedola — Coming Soon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Шрифты: Playfair Display для заголовков и Inter для текста -->
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" 
+    rel="stylesheet" 
+  />
+  <style>
+    body {
+      background-color: #f5ebe0; /* мягкий бежевый */
+      color: #1e293b;
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    ::selection {
+      background-color: #a0e7e5; /* нежный бирюзово-голубой */
+      color: #1e293b;
+      font-weight: 700;
+    }
+    .fade-in { opacity: 0; animation: fadeIn 1.2s ease forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    .pulse { animation: pulse 2.4s infinite; }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50%    { opacity: 0.75; }
+    }
+    .icon {
+      width: 24px; height: 24px; display: inline-block; vertical-align: middle; margin-right: 8px;
+      fill: #f4a261; /* пастельный персиковый */
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center px-6 py-12">
+  <div class="text-center max-w-3xl space-y-8">
+    <h1 class="text-6xl md:text-7xl fade-in" style="animation-delay: 0.2s">
+      Schedola
+    </h1>
+    <h2 class="text-xl md:text-2xl text-gray-700 fade-in" style="animation-delay: 0.4s">
+      Seamless Notion &amp; Apple Calendar Sync
+    </h2>
+    <p class="text-base md:text-lg text-gray-600 leading-relaxed fade-in" style="animation-delay: 0.6s">
+      Schedola connects your <span class="font-medium text-[#f4a261]">Notion databases</span> and<br/>
+      <span class="font-medium text-[#f4a261]">Apple Calendar</span> in real time, ensuring your tasks,<br/>
+      events, and notes stay perfectly aligned across platforms.
+    </p>
 
-      h1,
-      h2 {
-        font-family: "Playfair Display", serif;
-        font-weight: 700;
-        letter-spacing: -0.02em;
-      }
+    <!-- Преимущества с минималистичными SVG-иконками -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center fade-in" style="animation-delay: 0.8s">
+      <div class="space-y-2">
+        <h3 class="flex items-center justify-center text-lg font-semibold">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6a6 6 0 016 6c0 .34-.03.68-.1 1h2.02C18.98 12.28 19 11.77 19 11a8 8 0 00-8-8zM6 12a6 6 0 016-6v3l4-4-4-4v3a8 8 0 00-8 8c0 .77.02 1.28.08 1.9h2.02c-.07-.32-.10-.66-.10-1z"/></svg>
+          Bi-Directional Sync
+        </h3>
+        <p class="text-gray-600">Changes in Notion or Calendar update instantly everywhere.</p>
+      </div>
+      <div class="space-y-2">
+        <h3 class="flex items-center justify-center text-lg font-semibold">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 4h18v2H3V4zm0 4h18v2H3V8zm0 4h12v2H3v-2zm0 4h12v2H3v-2z"/></svg>
+          Calendar Harmony
+        </h3>
+        <p class="text-gray-600">Manage multiple Apple calendars with ease and clarity.</p>
+      </div>
+      <div class="space-y-2">
+        <h3 class="flex items-center justify-center text-lg font-semibold">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14l4-4h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+          Integrated Notes
+        </h3>
+        <p class="text-gray-600">Link tasks to rich Notion pages and keep context at your fingertips.</p>
+      </div>
+      <div class="space-y-2">
+        <h3 class="flex items-center justify-center text-lg font-semibold">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4a2 2 0 002 2zm6-6V9c0-3.07-1.64-5.64-4.5-6.32V2a1.5 1.5 0 10-3 0v.68C7.63 3.36 6 5.92 6 9v7l-2 2v1h16v-1l-2-2z"/></svg>
+          Smart Alerts
+        </h3>
+        <p class="text-gray-600">Get intelligent reminders based on your schedule and priorities.</p>
+      </div>
+    </div>
 
-      ::selection {
-        background-color: #ec4899;
-        color: white;
-        font-weight: 700;
-      }
-
-      .fade-in {
-        animation: fadeIn 1.5s ease forwards;
-        opacity: 0;
-      }
-
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
-      }
-
-      .pulse {
-        animation: pulse 2.4s infinite;
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.75;
-        }
-      }
-    </style>
-  </head>
-  <body class="min-h-screen flex items-center justify-center px-6">
-    <div class="text-center max-w-2xl">
-      <h1
-        class="text-6xl md:text-7xl mb-6 fade-in"
-        style="animation-delay: 0.3s"
-      >
-        Schedola
-      </h1>
-      <h2
-        class="text-lg md:text-xl text-gray-700 mb-4 fade-in"
-        style="animation-delay: 0.5s"
-      >
-        Your future planner.
-      </h2>
-      <p
-        class="text-base md:text-lg text-gray-600 mb-8 fade-in"
-        style="animation-delay: 0.7s"
-      >
-        Elegant, intelligent, and integrated — plan your life with clarity.<br />
-        Sync calendars, tasks, and thoughts into one seamless workspace.
-      </p>
+    <!-- Кнопка -->
+    <div class="mt-8 fade-in" style="animation-delay: 1s">
       <button
         disabled
-        class="bg-pink-500 text-white px-8 py-3 rounded-full font-semibold cursor-not-allowed shadow-md hover:bg-pink-600 transition pulse fade-in"
-        style="animation-delay: 1s"
+        class="bg-[#f4a261] text-white px-10 py-4 rounded-full font-semibold shadow-lg cursor-not-allowed hover:bg-[#e38b45] transition pulse"
       >
-        Coming Soon
+        Launching Soon
       </button>
-      <p
-        class="mt-12 text-gray-400 text-sm fade-in"
-        style="animation-delay: 1.4s"
-      >
-        © 2025 Schedola. All rights reserved.
-      </p>
     </div>
-  </body>
+
+    <!-- Футер -->
+    <p class="mt-12 text-gray-500 text-sm fade-in" style="animation-delay: 1.4s">
+      © 2025 Schedola — Brought to you by Myroslav Repin
+    </p>
+  </div>
+</body>
 </html>
