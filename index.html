@@ -1,104 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schedola — Coming Soon</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Шрифты: Playfair Display для заголовков и Inter для текста -->
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" 
-    rel="stylesheet" 
-  />
-  <style>
-    body {
-      background-color: #f5ebe0; /* мягкий бежевый */
-      color: #1e293b;
-      font-family: 'Inter', sans-serif;
-    }
-    h1, h2 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    ::selection {
-      background-color: #a0e7e5; /* нежный бирюзово-голубой */
-      color: #1e293b;
-      font-weight: 700;
-    }
-    .fade-in { opacity: 0; animation: fadeIn 1.2s ease forwards; }
-    @keyframes fadeIn { to { opacity: 1; } }
-    .pulse { animation: pulse 2.4s infinite; }
-    @keyframes pulse {
-      0%,100% { opacity: 1; }
-      50%    { opacity: 0.75; }
-    }
-    .icon {
-      width: 24px; height: 24px; display: inline-block; vertical-align: middle; margin-right: 8px;
-      fill: #f4a261; /* пастельный персиковый */
-    }
-  </style>
-</head>
-<body class="min-h-screen flex items-center justify-center px-6 py-12">
-  <div class="text-center max-w-3xl space-y-8">
-    <h1 class="text-6xl md:text-7xl fade-in" style="animation-delay: 0.2s">
-      Schedola
-    </h1>
-    <h2 class="text-xl md:text-2xl text-gray-700 fade-in" style="animation-delay: 0.4s">
-      Seamless Notion &amp; Apple Calendar Sync
-    </h2>
-    <p class="text-base md:text-lg text-gray-600 leading-relaxed fade-in" style="animation-delay: 0.6s">
-      Schedola connects your <span class="font-medium text-[#f4a261]">Notion databases</span> and<br/>
-      <span class="font-medium text-[#f4a261]">Apple Calendar</span> in real time, ensuring your tasks,<br/>
-      events, and notes stay perfectly aligned across platforms.
-    </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedola — Beta</title>
 
-    <!-- Преимущества с минималистичными SVG-иконками -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center fade-in" style="animation-delay: 0.8s">
-      <div class="space-y-2">
-        <h3 class="flex items-center justify-center text-lg font-semibold">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6a6 6 0 016 6c0 .34-.03.68-.1 1h2.02C18.98 12.28 19 11.77 19 11a8 8 0 00-8-8zM6 12a6 6 0 016-6v3l4-4-4-4v3a8 8 0 00-8 8c0 .77.02 1.28.08 1.9h2.02c-.07-.32-.10-.66-.10-1z"/></svg>
-          Bi-Directional Sync
-        </h3>
-        <p class="text-gray-600">Changes in Notion or Calendar update instantly everywhere.</p>
-      </div>
-      <div class="space-y-2">
-        <h3 class="flex items-center justify-center text-lg font-semibold">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M3 4h18v2H3V4zm0 4h18v2H3V8zm0 4h12v2H3v-2zm0 4h12v2H3v-2z"/></svg>
-          Calendar Harmony
-        </h3>
-        <p class="text-gray-600">Manage multiple Apple calendars with ease and clarity.</p>
-      </div>
-      <div class="space-y-2">
-        <h3 class="flex items-center justify-center text-lg font-semibold">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14l4-4h12c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
-          Integrated Notes
-        </h3>
-        <p class="text-gray-600">Link tasks to rich Notion pages and keep context at your fingertips.</p>
-      </div>
-      <div class="space-y-2">
-        <h3 class="flex items-center justify-center text-lg font-semibold">
-          <svg class="icon" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4a2 2 0 002 2zm6-6V9c0-3.07-1.64-5.64-4.5-6.32V2a1.5 1.5 0 10-3 0v.68C7.63 3.36 6 5.92 6 9v7l-2 2v1h16v-1l-2-2z"/></svg>
-          Smart Alerts
-        </h3>
-        <p class="text-gray-600">Get intelligent reminders based on your schedule and priorities.</p>
-      </div>
-    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
 
-    <!-- Кнопка -->
-    <div class="mt-8 fade-in" style="animation-delay: 1s">
-      <button
-        disabled
-        class="bg-[#f4a261] text-white px-10 py-4 rounded-full font-semibold shadow-lg cursor-not-allowed hover:bg-[#e38b45] transition pulse"
-      >
-        Launching Soon
-      </button>
-    </div>
+    <style>
+      @font-face {
+        font-family: 'Baleny';
+        src: url('/fonts/Baleny.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Canela';
+        src: url('/fonts/Canela.woff2') format('woff2');
+      }
 
-    <!-- Футер -->
-    <p class="mt-12 text-gray-500 text-sm fade-in" style="animation-delay: 1.4s">
-      © 2025 Schedola — Brought to you by Myroslav Repin
-    </p>
-  </div>
-</body>
+      body {
+        background-color: #f5ebe0;
+        font-family: 'Canela', serif;
+      }
+
+      .headline {
+        font-family: 'Baleny', 'DM Serif Display', serif;
+      }
+
+      .subheading {
+        font-family: 'DM Serif Display', serif;
+      }
+
+      .pulse {
+        animation: pulseGlow 2s infinite;
+      }
+
+      @keyframes pulseGlow {
+        0% {
+          box-shadow: 0 0 0 0 rgba(234, 182, 118, 0.6);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(234, 182, 118, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(234, 182, 118, 0);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#f5ebe0] text-center text-gray-800">
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 bg-[#f5ebe0]/90 backdrop-blur-sm border-b border-white/10">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="headline text-2xl">Schedola</h1>
+        <nav class="hidden md:flex gap-8 text-lg">
+          <a href="#features" class="hover:text-black transition">Features</a>
+          <a href="#about" class="hover:text-black transition">About</a>
+          <a href="#contact" class="hover:text-black transition">Contact</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden">
+          <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden flex-col items-center gap-4 px-4 pb-4">
+        <a href="#features" class="text-lg">Features</a>
+        <a href="#about" class="text-lg">About</a>
+        <a href="#contact" class="text-lg">Contact</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto pt-48 pb-32 px-4">
+      <section>
+        <h1 class="headline text-6xl md:text-7xl mb-6">Schedola</h1>
+        <h2 class="subheading text-2xl md:text-3xl italic mb-6">Your future planner</h2>
+        <p class="text-xl leading-relaxed mb-6">
+          Schedola brings simplicity and style to your productivity. All your tasks, calendars, and notes — perfectly synchronized and elegantly presented.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mb-12">
+          Join our beta and help shape a planner built with clarity, softness, and your rhythm in mind.
+        </p>
+        <button class="pulse px-8 py-4 text-white rounded-full bg-[#eab676] hover:bg-[#d49d56] transition-all duration-300 text-lg">
+          Join the Beta
+        </button>
+      </section>
+
+      <section id="features" class="mt-32">
+        <h3 class="subheading text-4xl mb-6">Features</h3>
+        <div class="text-lg leading-relaxed space-y-4">
+          <p>• Unified calendar + task view</p>
+          <p>• Intuitive note editor with reminders</p>
+          <p>• Real-time sync between all your tools</p>
+          <p>• AI-powered suggestions to simplify planning</p>
+          <p>• Elegant interface that inspires focus</p>
+        </div>
+      </section>
+
+      <section id="about" class="mt-32">
+        <h3 class="subheading text-4xl mb-6">Why we built Schedola</h3>
+        <p class="text-lg leading-relaxed">
+          Modern life is busy. We wanted to create a tool that feels like a breath of fresh air — gentle visuals, subtle interactions,
+          and meaningful features. Schedola was born from the need to slow down and still get things done.
+        </p>
+      </section>
+
+      <section id="contact" class="mt-32">
+        <h3 class="subheading text-4xl mb-6">Contact</h3>
+        <p class="text-lg leading-relaxed">
+          Reach out anytime: <a href="mailto:team@schedola.com" class="underline text-blue-600">team@schedola.com</a><br />
+          We'd love to hear from you.
+        </p>
+      </section>
+    </main>
+
+    <footer class="text-sm text-gray-500 text-center w-full pb-10">
+      © 2025 Schedola — All rights reserved.
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      menuBtn.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.remove('hidden');
+          mobileMenu.classList.add('flex');
+        } else {
+          mobileMenu.classList.remove('flex');
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    </script>
+  </body>
 </html>
